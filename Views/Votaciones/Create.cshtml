@@ -1,0 +1,43 @@
+﻿@model Califi_restaurante.Models.tbl_Votaciones
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>tbl_Votaciones</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Id_restaurante" class="control-label"></label>
+                <input asp-for="Id_restaurante" class="form-control" />
+                <span asp-validation-for="Id_restaurante" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Id_dato" class="control-label"></label>
+                <input asp-for="Id_dato" class="form-control" />
+                <span asp-validation-for="Id_dato" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Votacion" class="control-label"></label>
+                <input asp-for="Votacion" class="form-control" />
+                <span asp-validation-for="Votacion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
